@@ -5,11 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftToolbox",
+    platforms: [
+        .macOS(.v10_15), .iOS(.v14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SwiftToolbox",
-            targets: ["RegexTools"]),
+            targets: ["RegexTools"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -22,9 +26,17 @@ let package = Package(
             name: "RegexTools",
             dependencies: []
         ),
+        .target(
+            name: "StringTools",
+            dependencies: ["RegexTools"]
+        ),
         .testTarget(
             name: "RegexToolsTests",
             dependencies: ["RegexTools"]
+        ),
+        .testTarget(
+            name: "StringToolsTests",
+            dependencies: ["StringTools"]
         ),
     ]
 )
