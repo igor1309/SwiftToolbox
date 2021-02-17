@@ -26,12 +26,12 @@ let package = Package(
             name: "RegexTools",
             dependencies: []
         ),
-        .target(
-            name: "StringTools",
-            dependencies: ["RegexTools"]
-        ),
         .testTarget(
             name: "RegexToolsTests",
+            dependencies: ["RegexTools"]
+        ),
+        .target(
+            name: "StringTools",
             dependencies: ["RegexTools"]
         ),
         .testTarget(
