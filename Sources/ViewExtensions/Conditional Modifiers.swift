@@ -13,7 +13,7 @@ extension View {
     // MARK: - Conditional modifiers
 
     @ViewBuilder
-    func `if`<Transform: View>(_ condition: Bool, transform: (Self) -> Transform) -> some View {
+    public func `if`<Transform: View>(_ condition: Bool, transform: (Self) -> Transform) -> some View {
         if condition {
             transform(self)
         } else {
@@ -23,7 +23,7 @@ extension View {
 
     // https://fivestars.blog/swiftui/conditional-modifiers.html
     @ViewBuilder
-    func `if`<TrueContent: View, FalseContent: View>(
+    public func `if`<TrueContent: View, FalseContent: View>(
         _ condition: Bool,
         if ifTransform: (Self) -> TrueContent,
         else elseTransform: (Self) -> FalseContent
@@ -36,7 +36,7 @@ extension View {
     }
 
     @ViewBuilder
-    func ifLet<V, Transform: View>(
+    public func ifLet<V, Transform: View>(
         _ value: V?,
         transform: (Self, V) -> Transform
     ) -> some View {
