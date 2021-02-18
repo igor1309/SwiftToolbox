@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SwiftToolbox",
-            targets: ["RegexTools", "StringTools"]
+            targets: ["RegexTools", "StringTools", "ViewExtensions"]
         ),
     ],
     dependencies: [
@@ -37,6 +37,14 @@ let package = Package(
         .testTarget(
             name: "StringToolsTests",
             dependencies: ["StringTools"]
+        ),
+        .target(
+            name: "ViewExtensions",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "ViewExtensionsTests",
+            dependencies: []
         ),
     ]
 )
