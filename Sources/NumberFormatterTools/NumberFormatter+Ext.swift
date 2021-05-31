@@ -9,17 +9,14 @@ import Foundation
 
 #warning("write tests for this")
 
-public extension Int {
-    var formatGrouped: String { NumberFormatter.decimal0.string(for: self) ?? "n/a" }
-    var formatPlain: String { NumberFormatter.plain.string(for: self) ?? "n/a" }
-}
-
-public extension Double {
+public extension Numeric {
     var formatPlain: String { NumberFormatter.plain.string(for: self) ?? "n/a" }
 
     var formatPercentage0: String { NumberFormatter.percentage0.string(for: self) ?? "n/a" }
     var formatPercentage1: String { NumberFormatter.percentage1.string(for: self) ?? "n/a" }
     var formatPercentage2: String { NumberFormatter.percentage2.string(for: self) ?? "n/a" }
+
+    var formatGrouped: String { NumberFormatter.decimal0.string(for: self) ?? "n/a" }
 
     var formatDecimal0: String { NumberFormatter.decimal0.string(for: self) ?? "n/a" }
     var formatDecimal1: String { NumberFormatter.decimal1.string(for: self) ?? "n/a" }
